@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sport: MyString
+  day: 2021-08-10
+  moving_time: 1
+  distance: 1
+  user: one
+
+two:
+  sport: MyString
+  day: 2021-08-10
+  moving_time: 1
+  distance: 1
+  user: two

@@ -17,6 +17,14 @@
             <td>password</td>
           </tr>
         <% end %>
+        <% Track.all.each do |track| %>
+          <tr>
+            <td><%= track.sport %></td>
+            <td><%= track.day %></td>
+            <td><%= track.distance %></td>
+            <td><%= track.moving_time %></td>
+          </tr>
+        <% end %>
       </tbody>
     </table>
   </div>

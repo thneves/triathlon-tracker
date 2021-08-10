@@ -9,3 +9,10 @@
 2.times do |i|
   User.create(email: "user-#{i+1}@example.com", password: "password", password_confirmation: "password")
 end
+
+User.all.each do |user|
+  2.times do
+    user.tracks.create(sport: "Run", distance: 10, moving_time: 2400, day:"10/10/2001")
+  end
+end
+
