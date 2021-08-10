@@ -6,5 +6,4 @@ class Track < ApplicationRecord
   validates :moving_time, presence: true
   validates :distance, presence: true
   validates :day, presence: true
-
 end

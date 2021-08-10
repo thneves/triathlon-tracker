@@ -1,6 +1,6 @@
 class Api::V1::TracksController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_track, only: [:show, :edit, :update, :destroy]
+  before_action :set_track, only: %i[show edit update destroy]
 
   def index
     @tracks = current_user.tracks.all
@@ -28,11 +28,12 @@ class Api::V1::TracksController < ApplicationController
       end
     else
       handle_unauthorized
-    end  
+    end
   end
 
   # Create a new @track instance variable that BUILDS a new Track from the current_user
-  # I pass the track_params which re declare as a privated method. This concept is called strong parameters, and prevents mass assignment.
+  # I pass the track_params which re declare as a privated method.
+  # This concept is called strong parameters, and prevents mass assignment.
 
   def update
     if authorized?
@@ -40,7 +41,7 @@ class Api::V1::TracksController < ApplicationController
         if @track.update(track_params)
           format.json { render :show, status: :ok, location: api_v1_track_path(@track) }
         else
-          format.json ( render json: @track.errors, status: :unprocessable_entity)
+          format.json(render(json: @track.errors, status: :unprocessable_entity))
         end
       end
     else
@@ -64,7 +65,7 @@ class Api::V1::TracksController < ApplicationController
   def track_params
     params.require(:track).permit(:sport, :day, :distance, :moving_time)
   end
-  
+
   def set_track
     @track = Track.find(params[:id])
   end
@@ -74,11 +75,10 @@ class Api::V1::TracksController < ApplicationController
   end
 
   def handle_unauthorized
-    unless authorized?
-      respond_to do |format|
-        format.json { render :unauthorized, status: 401 }
-      end
-    end 
-  end
+    return unless authorized?
 
+    respond_to do |format|
+      format.json { render :unauthorized, status: 401 }
+    end
+  end
 end

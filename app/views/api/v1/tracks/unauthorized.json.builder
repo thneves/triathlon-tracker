@@ -1,1 +1,1 @@
-json.error "You are not authorized for this action!"
+json.error 'You are not authorized for this action!'
