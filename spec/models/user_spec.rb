@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  
+
   describe "creation" do
     let!(:user) { FactoryBot.create(:user) }
     it "can be created" do
@@ -10,7 +10,7 @@ RSpec.describe User, type: :model do
   end
 
   describe "validations" do
-    let(:user) {FactoryBot.build (:user) }
+    let(:user) { FactoryBot.build (:user) }
     let(:duplicate_user) { FactoryBot.build(:user) }
 
     it "must have an email" do
@@ -29,7 +29,9 @@ RSpec.describe User, type: :model do
       expect(user).to_not be_valid
     end
 
+    it "has tracks association" do
+      should respond_to(:tracks)
+    end
   end
-
 
 end
