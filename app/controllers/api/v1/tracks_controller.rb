@@ -1,12 +1,17 @@
-class TracksController < ApplicationController
+class Api::V1::TracksController < ApplicationController
   include CurrentUserConcern
   
   def index
-    tracks = @current_user.tracks 
+    tracks = @current_user.tracks
+    
+    render json: {
+      status: :ok,
+      tracks: tracks
+    }
   end
 
   def create
-    track = Track.create(track_params)
+    track = @current_user.tracks.create(track_params)
     if track.save
       render json: {
         status: :created,
@@ -27,24 +32,20 @@ class TracksController < ApplicationController
         status: :ok,
         track: track
       }
-    else
-      render json: {
-        status: 500
-      }
-    end
   end
 
   def destroy
     track = Track.find(params[:id])
+
     track.destroy
 
     render json: {
-      status: :ok
+      status: 204
     }
   end
 
   def track_params
-    params.permit(:user_id, :sport, :day, :moving_time, :distance)
+    params.require(:track).permit(:user_id, :sport, :day, :moving_time, :distance)
   end
 
 end
