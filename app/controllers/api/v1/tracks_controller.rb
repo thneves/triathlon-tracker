@@ -32,6 +32,7 @@ class Api::V1::TracksController < ApplicationController
         status: :ok,
         track: track
       }
+    end
   end
 
   def destroy
