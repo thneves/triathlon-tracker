@@ -21,7 +21,9 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'rexml', '~> 3.2', '>= 3.2.4'
 gem 'rack-cors', :require => 'rack/cors'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -32,6 +34,11 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
 end
 
 group :development do
