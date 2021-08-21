@@ -1,8 +1,9 @@
 FactoryBot.define do
   factory :user do
-    username { 'username' }
-    email { 'user@example.com' }
+    username { 'foobar' }
+    email { 'foo@bar.com' }
     password { 'foobar' }
+    password_confirmation { 'foobar'}
   end
 
   factory :track do
