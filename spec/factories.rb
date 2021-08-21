@@ -3,7 +3,7 @@ FactoryBot.define do
     username { 'foobar' }
     email { 'foo@bar.com' }
     password { 'foobar' }
-    password_confirmation { 'foobar'}
+    password_confirmation { 'foobar' }
   end
 
   factory :track do
