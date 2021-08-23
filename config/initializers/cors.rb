@@ -8,7 +8,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   end
 
   allow do
-    origins 'https://tritracker.netlify.app' # for production
+    origins 'https://tri-tracker.herokuapp.com/' # for production
     resource '*', headers: :any, methods: %i[get post put patch delete head], credentials: true # allows
   end
 end
