@@ -13,7 +13,7 @@ module TriathlonTracker
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
-    Rails.application.config.hosts << "https://tri-tracker.herokuapp.com/"
+    Rails.application.config.hosts << "https://tri-tracker-api.herokuapp.com"
 
     # Configuration for the application, engines, and railties goes here.
     #
