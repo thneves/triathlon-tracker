@@ -1,5 +1,5 @@
-class TracksController < ApplicationController
-  include CurrentUser
+class Api::V1::TracksController < ApplicationController
+  include CurrentUserConcern
   def index
     tracks = @current_user.tracks
 

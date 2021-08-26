@@ -8,8 +8,10 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       render json: {
         status: :created,
+        session: session,
         logged_in: true,
-        user: user
+        user: user,
+        current: @current_user
       }
     else
       render json: {
@@ -33,7 +35,8 @@ class SessionsController < ApplicationController
   end
 
   def logout
+    showSession = session
     reset_session
-    render json: { status: 200, logged_out: true }
+    render json: { status: 200, logged_out: true, oldSesh: showSession }
   end
 end
