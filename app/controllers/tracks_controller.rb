@@ -1,5 +1,4 @@
 class TracksController < ApplicationController
-  include CurrentUserConcern
   def index
     tracks = @current_user.tracks
 
