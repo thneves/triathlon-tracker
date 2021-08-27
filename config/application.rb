@@ -13,9 +13,9 @@ module TriathlonTracker
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
-    config.middleware.use ActionDispatch::Cookies
-    config.middleware.use ActionDispatch::Session::CookieStore
-    config.middleware.use ActionDispatch::Session::CacheStore
+    # config.middleware.use ActionDispatch::Cookies
+    # config.middleware.use ActionDispatch::Session::CookieStore
+    # config.middleware.use ActionDispatch::Session::CacheStore
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -24,5 +24,6 @@ module TriathlonTracker
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.api_only = true
   end
 end
