@@ -15,6 +15,7 @@ module TriathlonTracker
 
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
+    config.middleware.insert_after(ActionDispatch::Cookies, ActionDispatch::Session::CookieStore, :key => '_authentication_app') 
 
     # Configuration for the application, engines, and railties goes here.
     #
