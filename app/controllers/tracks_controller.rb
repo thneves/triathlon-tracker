@@ -1,6 +1,5 @@
 class TracksController < ApplicationController
   include CurrentUserConcern
-
   def index
     tracks = @current_user.tracks
 
@@ -10,7 +9,6 @@ class TracksController < ApplicationController
       current: @current_user,
       session: session
     }
-    
   end
 
   def create

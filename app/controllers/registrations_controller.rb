@@ -1,4 +1,5 @@
 class RegistrationsController < ApplicationController
+  include CurrentUserConcern
   def create
     user = User.create!(
       username: params['user']['username'],
@@ -8,6 +9,7 @@ class RegistrationsController < ApplicationController
     )
 
     if user
+      @current_user_id = user.id
       session[:user_id] = user.id
       render json: {
         session: session,
