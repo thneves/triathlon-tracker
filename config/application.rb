@@ -15,7 +15,8 @@ module TriathlonTracker
 
     config.action_dispatch.cookies_same_site_protection = :none
 
-    # config.middleware.use ActionDispatch::Session::CacheStore
+    config.middleware.use ActionDispatch::Session::CookieStore
+    config.middleware.use ActionDispatch::Cookies
 
     # Configuration for the application, engines, and railties goes here.
     #
