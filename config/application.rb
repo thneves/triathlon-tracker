@@ -13,6 +13,8 @@ module TriathlonTracker
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
+    config.action_dispatch.cookies_same_site_protection = :none
+
     # config.middleware.use ActionDispatch::Session::CacheStore
 
     # Configuration for the application, engines, and railties goes here.
