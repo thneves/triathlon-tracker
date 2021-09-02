@@ -9,7 +9,6 @@ class RegistrationsController < ApplicationController
     )
 
     if user
-      @current_user_id = user.id
       session[:user_id] = user.id
       render json: {
         session: session,
