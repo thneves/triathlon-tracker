@@ -9,15 +9,14 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       render json: {
         status: :created,
-        session: session,
         logged_in: true,
         user: user,
-        current: @current_user
       }
     else
       render json: {
         status: 401,
-        logged_in: false
+        logged_in: false,
+        message: 'Invalid credentials, try again',
       }
     end
   end
@@ -36,7 +35,6 @@ class SessionsController < ApplicationController
   end
 
   def logout
-    showSession = session
     reset_session
     render json: { status: 200, logged_out: true, oldSesh: showSession, current: @current_user }
   end
