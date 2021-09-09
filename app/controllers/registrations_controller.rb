@@ -11,13 +11,15 @@ class RegistrationsController < ApplicationController
     if user
       session[:user_id] = user.id
       render json: {
-        session: session,
         status: :created,
-        user: user
+        user: user,
+        logged_in: true,
       }
     else
       render json: {
-        status: 500
+        status: 422,
+        error: 'Invalid data, try again!',
+        logged_in: false,
       }
     end
   end

@@ -7,8 +7,6 @@ class TracksController < ApplicationController
     render json: {
       status: :ok,
       tracks: tracks,
-      current: @current_user,
-      session: session
     }
   end
 
@@ -19,7 +17,6 @@ class TracksController < ApplicationController
       render json: {
         status: :created,
         track: track,
-        current: @current_user
       }
     else
       render json: {
