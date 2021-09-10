@@ -1,22 +1,21 @@
 class TracksController < ApplicationController
   include CurrentUserConcern
-  
+
   def index
     tracks = @current_user.tracks
 
     render json: {
       status: :ok,
-      tracks: tracks,
+      tracks: tracks
     }
   end
 
   def create
-
     track = @current_user.tracks.create(track_params)
     if track.save
       render json: {
         status: :created,
-        track: track,
+        track: track
       }
     else
       render json: {

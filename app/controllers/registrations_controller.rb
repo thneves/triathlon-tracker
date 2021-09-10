@@ -19,7 +19,7 @@ class RegistrationsController < ApplicationController
       render json: {
         status: 422,
         error: 'Invalid data, try again!',
-        logged_in: false,
+        logged_in: false
       }
     end
   end
