@@ -1,24 +1,103 @@
-# README
+# Tri Tracker - REST API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Backend service for the [Tri Tracker App](https://github.com/thneves/tri-tracker-client). 
 
-Things you may want to cover:
+## About
 
-* Ruby version
+This is a API only Rails application. A REST API that only returns JSON responses,
+here is made the creation and authentication of users and their tracks. We use `Rails Sessions` and `Cookies`
+to keep users logged in. `Postgresql` is used as database, where we store users and their data. Deployed on `Heroku`. 
 
-* System dependencies
+## Built With
 
-* Configuration
+- [Ruby](https://www.ruby-lang.org/en/)
+- [Ruby on Rails 6](https://rubyonrails.org/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [RSpec](https://rspec.info/)
+- [Heroku](https://heroku.com)
 
-* Database creation
+## Functionalities
 
-* Database initialization
+- Register new user.
+- Session Login.
+- Session Logout.
+- Create new track.
+- Fetch all tracks.
 
-* How to run the test suite
+## 💻 Getting Started
 
-* Services (job queues, cache servers, search engines, etc.)
+To get a local copy up and running follow these simple example steps.
 
-* Deployment instructions
+### Prerequisites
 
-* ...
+Install [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
+
+Install [Rails 6](https://guides.rubyonrails.org/getting_started.html)
+
+Install [Postgres: >=9.5](https://www.postgresql.org/download/)
+
+### Setup
+
+Open the terminal inside a folder of your choice and clone this repository using the following [Git](https://git-scm.com/downloads) commands in the terminal:
+
+```
+    git clone https://github.com/thneves/triathlon-tracker.git
+```
+
+Then, enter the project folder using:
+
+```
+    cd triathlon-tracker
+```
+
+Change for the local mode branch:
+
+```
+    git checkout dev-local
+```
+
+Now install gems with:
+
+```
+bundle install
+```
+
+Setup database with:
+
+```
+   rails db:create
+   rails db:migrate
+```
+
+<br>
+<br>
+
+### Usage
+
+Start the server on <strong>`PORT 3001`</strong>:
+
+```
+    rails s -p 3001
+```
+
+Open `http://localhost:3001/` in your browser.
+
+<br>
+<br>
+
+### Using the Front End
+
+After you have the project running on `localhost:3001`, if everything is fine you should see a "it's working message"
+
+go to this [PROJECT](https://github.com/thneves/tri-tracker-client) and follow the instructions.
+
+Then you can enjoy both front and back end on your local machine.
+
+<br>
+<br>
+
+### Running tests
+
+```
+    bundle exec rspec
+```
