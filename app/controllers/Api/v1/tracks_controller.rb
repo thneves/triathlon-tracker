@@ -1,4 +1,4 @@
-class TracksController < ApplicationController
+class Api::V1::TracksController < ApplicationController
   include CurrentUserConcern
 
   def index
