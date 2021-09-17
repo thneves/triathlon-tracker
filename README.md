@@ -36,6 +36,7 @@ New session id of same request:
 
 <img src="./screen2.png">
 
+
 example of GET request of the same session user above:
 
 <img src="./screen3.png">
