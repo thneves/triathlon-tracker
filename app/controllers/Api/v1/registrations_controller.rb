@@ -1,4 +1,4 @@
-class RegistrationsController < ApplicationController
+class Api::V1::RegistrationsController < ApplicationController
   include CurrentUserConcern
   def create
     user = User.create!(
