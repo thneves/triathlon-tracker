@@ -16,13 +16,31 @@ to keep users logged in. `Postgresql` is used as database, where we store users 
 - [RSpec](https://rspec.info/)
 - [Heroku](https://heroku.com)
 
-## Functionalities
+## Endpoints
 
-- Register new user.
-- Session Login.
-- Session Logout.
-- Create new track.
-- Fetch all tracks.
+The base URL for all endpoints is `https://tracker-server.herokuapp.com/api/v1`
+
+Summary of available api endpoints:
+
+POST `/registration` for authenticating new users, saves user in db, creates a new session and log in this user.
+POST `/sessions` makes the login for a existing user creating a new session.
+POST `/tracks` create a new activity of the current user in session and save it in db.
+GET `/tracks` checks the current user, and retrieve all his activities, used to check detailed info of activities and also for checking progress.
+DELETE `/logout` reset the current session, and log out the current user.
+
+example of a POST request of a new session on POSTMAN:
+
+<img src="./screen1.png">
+
+New session id of same request:
+
+<img src="./screen2.png">
+
+example of GET request of the same session user above:
+
+<img src="./screen3.png">
+
+
 
 ## 💻 Getting Started
 
